@@ -87,11 +87,11 @@ pub struct Literal<Span, Symbol> {
 }
 ```
 
-`bridge` has significantly more data--most of it being important parts--, 
-but `proc_macro` only exposes the `Span` from it.
+`bridge` has significantly more data--most of it being important parts--but 
+`proc_macro` only exposes the `Span` from it.
 
 This means if you want to only parse a token more specific than just 
-`Literal` (like a string literal), you need to *re-parse* data *from a 
+`Literal` (like a string literal), you need to *reparse* data *from a 
 string* that was <u>already parsed internally</u>. This is obviously 
 both slower *and* more prone to bugs/inconsistencies.
 
@@ -152,7 +152,7 @@ extension traits on the primitives and brand-new more complex tokens.
 
 `proc-macro2` actually uses 
 [a runtime check](https://docs.rs/proc-macro2/1.0.69/src/proc_macro2/detection.rs.html#7-16) 
-to determine whether of not it's running in a proc macro, while `mitzvah` 
+to determine whether it's running in a proc macro, while `mitzvah` 
 determines its fallback at compiletime. It's likely optimized into atoms, 
 but in the end `compiletime > runtime`.
 
