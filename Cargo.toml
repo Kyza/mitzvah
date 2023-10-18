@@ -1,0 +1,19 @@
+[workspace]
+resolver = "2"
+members = ["mitzvah", "mitzvah_macros", "mitzvah_tests"]
+
+[workspace.package]
+version = "0.1.0"
+
+[workspace.dependencies]
+mitzvah = { path = "mitzvah", version = "0.1.0" }
+mitzvah_macros = { path = "mitzvah_macros", version = "0.1.0" }
+mitzvah_tests = { path = "mitzvah_tests", version = "0.1.0" }
+
+syn = { version = "2.0.38" }
+proc-macro2 = { version = "1.0.69" }
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = 'z'

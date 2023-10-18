@@ -1,0 +1,9 @@
+[package]
+name = "mitzvah_macros"
+version = { workspace = true }
+edition = "2021"
+
+[dependencies]
+
+[lib]
+proc-macro = true

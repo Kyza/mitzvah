@@ -1,0 +1,26 @@
+name: Test
+
+on:
+  push:
+    branches: [ "trunk" ]
+  pull_request:
+    branches: [ "trunk" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build Debug
+      run: cargo build --verbose
+    - name: Build Release
+      run: cargo build --release --verbose
+    - name: Run Debug Tests
+      run: cargo test --verbose
+    - name: Run Release Tests
+      run: cargo test --release --verbose

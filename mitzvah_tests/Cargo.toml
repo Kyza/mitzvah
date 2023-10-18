@@ -1,0 +1,13 @@
+[package]
+name = "mitzvah_tests"
+version = { workspace = true }
+edition = "2021"
+
+[dependencies]
+mitzvah = { workspace = true }
+
+[dev-dependencies]
+#mitzvah = { workspace = true, features = ["proc-macro2"] }
+
+[lib]
+proc-macro = true
