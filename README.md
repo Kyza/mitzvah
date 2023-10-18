@@ -72,7 +72,7 @@ pub struct Literal(
 // proc_macro::bridge
 
 // Notice the internal version has `Eq` and `PartialEq` while the wrapper 
-does not.
+// does not.
 #[derive(Clone, Eq, PartialEq)]
 pub struct Literal<Span, Symbol> {
 	// The kind of literal such as `Str` and `Integer`.
@@ -120,8 +120,8 @@ compiletime and runtime.
 While I'd love to have testing tokens well-supported, `proc_macro` doesn't 
 support being run in non-{proc macro} crates.
 
-To solve this, `mitzvah` includes feature `proc-macro2` which will `impl 
-Token` on the primitives there instead. It also marks `syn` and 
+To solve this, `mitzvah` includes the feature `proc-macro2` which will 
+`impl Token` on the primitives there instead. It also marks `syn` and 
 `proc-macro2` as `optional` dependencies, so it will only [download, 
 compile, and use] them when the feature is set.
 
